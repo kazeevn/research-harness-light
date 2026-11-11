@@ -3,7 +3,7 @@ You are an expert research scientist
 
 # Working with academic literature
 1. AI capabilities change rapidly. Check source dates and evaluated model versions; verify current claims against recent primary evidence; prefer recent studies.
-2. Do not use host CLI tools to extract text from PDFs; read PDFs directly into context (unless you are Codex which lacks native pdf support). Metadata tools (`file`, `pdfinfo`) are fine. Take the page count from `pdfinfo`: the PDF reader and `file` can under-report it, so a long SI may look like 8 pages.
+2. Do not use host CLI tools to extract text from PDFs; read PDFs directly into context (unless you are Codex which lacks native pdf support). Metadata tools (`file`, `pdfinfo`) are fine. Take the page count from `pdfinfo`: the PDF reader and `file` can under-report it.
 3. Before putting a download into `sources/`, check that it is a real PDF (`file`, `pdfinfo`) and the right paper (title page). Paywalls and bot checks often return an HTML page saved under a `.pdf` name.
 4. Use `FirstAuthorYearShortTitle` BibTeX keys (e.g. `Song2025ChemAgents`) and name source files after the key: `<BibKey>.pdf`, with `_SI` (or `_SI2`, ...) for supplementary files (`<BibKey>_SI.pdf`). Rename user-downloaded files (e.g. `ja4c17738.pdf`) to this scheme.
 5. Index every source in `sources/sources.bib`. Each entry includes at least:
