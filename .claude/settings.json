@@ -11,5 +11,24 @@
     "anthropic-skills:skill-creator": "name-only",
     "anthropic-skills:xlsx": "name-only",
     "image-generation": "name-only"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/quota-statusline.sh\"",
+    "refreshInterval": 60
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/quota-guard.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   }
 }

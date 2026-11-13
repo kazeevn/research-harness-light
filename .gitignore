@@ -1,2 +1,4 @@
 .env
 .claude/settings.local.json
+.claude/quota.json
+.claude/.quota.*
